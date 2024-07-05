@@ -10,9 +10,6 @@ const LobbyScreen=()=>{
     const socket = useSocket();
     const navigate = useNavigate();
 
-
-
-
     const handleSubmitForm = useCallback((e)=>{
         e.preventDefault();
             socket.emit('room:join', {email,room})
@@ -25,11 +22,6 @@ const LobbyScreen=()=>{
         navigate(`/room/${room}`)
 
     },[navigate])
-
-
-
-
-
 
     useEffect(()=>{
         socket.on("room:join",handleJoinRoom);
